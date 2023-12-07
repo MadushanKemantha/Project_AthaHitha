@@ -23,7 +23,13 @@
                 <button id="login" type="submit">LOGIN HERE</button>
             </form>
         </div>
-        <p>Don't have an account? <br> <a href="{{route('register')}}"><Span>Sign Up</Span> </a></p>
+        <p>Don't have an account? <br> <a href="{{route('register')}}"><Span>Sign Up</Span> </a>
+        <br>
+    <a href="{{ route('password.request') }}" style="text-decoration: none; color: blue;">
+    <span style="text-decoration: none; color: blue;">Forgot Password?</span>
+</a>
+    
+    </p>
         <p>or</p>
         <p>Log in with</p>
         <center><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-google" viewBox="0 0 16 16">

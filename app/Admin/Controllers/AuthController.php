@@ -194,7 +194,7 @@ class AuthController extends BaseAuthController
 
         // Redirect or return a response
         if ($donation) {
-            return redirect()->intended(route('userprofile'));
+            return redirect()->intended(route('categories'));
         }
         return back()->withInput()->with('fail', 'Failed to make a donation. Please try again.');
     }
@@ -218,10 +218,9 @@ class AuthController extends BaseAuthController
 
         // Redirect or return a response
         if ($gooddonation) {
-            return redirect()->intended(route('userprofile'));
+            return redirect()->intended(route('categories'));
         }
         return back()->withInput()->with('fail', 'Failed to make a donation. Please try again.');
-
     }
 
     public function uploadProfilePic(Request $request)
@@ -296,5 +295,4 @@ class AuthController extends BaseAuthController
         $info = DB::select('select category, amount, created_at from donations where user_id = ?', [$id]);
         return view('userprofile', ['info' => $info]);
     }
-
 }

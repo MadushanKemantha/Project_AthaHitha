@@ -9,6 +9,7 @@ use App\Admin\Controllers\AuthController;
 use App\Http\Controllers\MailController;
 
 
+
 Route::get('/phpinfo', function () {
     return view('info');
 });
@@ -28,6 +29,7 @@ Route::get('/gallery', function () {
     return view('gallary');
 })->name('gallary');
 
+Auth::routes();
 
 
 
@@ -141,3 +143,6 @@ Route::get('/admin/moneyDonationInfo', [Donations::class, 'getAllMoneyProjects']
 
 //good donation
 Route::get('/admin/DonateDonationInfo', [Donations::class, 'getAllGoodsProjects'])->name('admin.GoodDonationInfo')->middleware('Is_admin');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
